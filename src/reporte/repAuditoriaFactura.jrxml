@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c02a18e5-4732-4b4d-84e1-1ef23ec69752">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="436"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaInicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaFinal" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from v_auditoria_factura where date(fechfact) between $P{fechaInicio} and $P{fechaFinal};]]>
+	</queryString>
+	<field name="idfactura" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechfact" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombclie" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombempl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apatempl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amatempl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stotfact" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="igvfact" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totafact" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="obsvfact" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="transa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechahora" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="29" width="180" height="30" uuid="fd4f5b67-e297-4ea7-85c1-10ac19119c7b"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Auditoria Factura]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="56" height="20" uuid="2a75020c-1638-4c9b-a17b-ed23c71cee88"/>
+				<text><![CDATA[Cod Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="0" width="100" height="20" uuid="ca3a9259-b9a8-4bd0-b6fb-83e8707755f1"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="0" width="100" height="20" uuid="31ee5c95-7bed-400a-b3ee-e7c2fa6340ba"/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="0" width="100" height="20" uuid="7ef0f0d0-21ae-4fb5-b2df-f8f9f77a8bf7"/>
+				<text><![CDATA[Nombre Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="0" width="100" height="20" uuid="17c1a588-36d7-4989-abd1-a4081fe29fd5"/>
+				<text><![CDATA[Ap Paterno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="84" height="20" uuid="7032a5fd-5d44-4c2f-893c-f33915117b07"/>
+				<text><![CDATA[Total Fact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="0" width="31" height="20" uuid="ba1a9953-42a8-4f38-95e1-3f56710545a2"/>
+				<text><![CDATA[Transa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="571" y="0" width="100" height="20" uuid="82edc7f1-fc7b-46d5-872e-7b72db28259e"/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="671" y="0" width="100" height="20" uuid="43ab1e41-20d1-4255-9b5e-0513d6aacb6c"/>
+				<text><![CDATA[Fecha Hora]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="56" height="20" uuid="ec31b4fd-f9c3-4ac8-9801-d8ac5354a03f"/>
+				<textFieldExpression><![CDATA[$F{idfactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="0" width="100" height="20" uuid="178d53fc-99f1-45cd-92f3-1ef2d6984058"/>
+				<textFieldExpression><![CDATA[$F{fechfact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="156" y="0" width="100" height="20" uuid="40ec9db0-035f-4d0d-a98d-0995f754831e"/>
+				<textFieldExpression><![CDATA[$F{nombclie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="0" width="100" height="20" uuid="18e3cd3b-9e00-41c6-92c2-cbb919a688eb"/>
+				<textFieldExpression><![CDATA[$F{nombempl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="0" width="100" height="20" uuid="c77e96d8-2471-4df7-9c80-c3f7ccef6610"/>
+				<textFieldExpression><![CDATA[$F{apatempl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="84" height="20" uuid="57a9a2e3-ddf1-4c65-8bf9-21f9493e0efa"/>
+				<textFieldExpression><![CDATA[$F{totafact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="540" y="0" width="31" height="20" uuid="d158ac32-b56c-4d83-b35f-dae66a7e209b"/>
+				<textFieldExpression><![CDATA[$F{transa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="571" y="0" width="100" height="20" uuid="8d2aeb9b-c426-485b-9a33-a5c544563934"/>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="671" y="0" width="100" height="20" uuid="6a2f23bb-0ed5-4077-9571-bc2bc2056d91"/>
+				<textFieldExpression><![CDATA[$F{fechahora}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="671" y="0" width="100" height="20" uuid="00bedeed-733d-4ae8-a962-96b33b1e8279"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="571" y="0" width="100" height="20" uuid="d9665e03-72d3-4c4c-87e2-ab399daa19f7"/>
+				<text><![CDATA[Total de registros]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>
