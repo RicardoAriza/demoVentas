@@ -138,7 +138,7 @@ public class AcessoGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAceptarActionPerformed
 
     private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
-
+dispose();
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
     /**
